@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login - KURASU</title>
+<style>
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#eee;
+    font-family:sans-serif;
+}
+.box {
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    text-align:center;
+}
+input {
+    display:block;
+    margin:15px auto;
+    padding:10px;
+    font-size:18px;
+}
+button {
+    padding:10px 20px;
+    font-size:18px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+    <h2>KURASU Login</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<script>
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+        window.location.href = "/";
+    } else {
+        alert("Login failed");
+    }
+}
+</script>
+</body>
+</html>
