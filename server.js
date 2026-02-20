@@ -1,12 +1,14 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
-
-app.get("/", (req, res) => {
-  res.send("KURASU is running 🚀");
-});
-
 const PORT = process.env.PORT || 3000;
 
+// ルートアクセスでおは.htmlを表示
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "おは.html"));
+});
+
 app.listen(PORT, () => {
-  console.log("Server started");
+  console.log("KURASU is running 🚀！！");
 });
